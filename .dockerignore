@@ -1,0 +1,10 @@
+target/
+.git/
+.idea/
+.vscode/
+*.iml
+Dockerfile
+docker-compose.yml
+Jenkinsfile
+README.md
+nginx/

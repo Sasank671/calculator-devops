@@ -1,0 +1,35 @@
+name: calculator-stack
+
+services:
+  calculator:
+    image: ${IMAGE:-calculator}:${TAG:-latest}
+    build: .
+    environment:
+      - PORT=8080
+    expose:
+      - "8080"
+    networks:
+      - calc-net
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:8080/actuator/health"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+      start_period: 5s
+
+  nginx:
+    image: nginx:1.27-alpine
+    ports:
+      - "9090:80"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      calculator:
+        condition: service_healthy
+    networks:
+      - calc-net
+    restart: unless-stopped
+
+networks:
+  calc-net:
