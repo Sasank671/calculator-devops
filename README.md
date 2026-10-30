@@ -71,3 +71,4 @@ docker compose down
    `ngrok http 8080`, or rely on the Poll SCM fallback in the Jenkinsfile.
 7. Jenkins must be able to run `mvn`, `docker` and `curl`. On macOS (Homebrew Jenkins), add
    `PATH+EXTRA=/opt/homebrew/bin:/usr/local/bin` under Manage Jenkins → System → Global properties → Environment variables.
+
