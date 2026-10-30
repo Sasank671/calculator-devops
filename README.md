@@ -1,4 +1,4 @@
-# Calculator DevOps (CSE 816 Mini-Project)
+# Calculator DevOps (SPE Mini-Project)
 
 A simple Java calculator exposed over HTTP (using the JDK's built-in `HttpServer`, no frameworks),
 built with Maven and shipped through a Jenkins → Docker Hub → Docker Compose pipeline.
