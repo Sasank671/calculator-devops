@@ -8,10 +8,10 @@ pipeline {
     }
 
     environment {
-        DOCKERHUB_USER = 'YOUR_DOCKERHUB_USERNAME'
+        DOCKERHUB_USER = 'sasank2305'
         IMAGE = "${DOCKERHUB_USER}/calculator"
         TAG = "${BUILD_NUMBER}"
-        EMAIL = 'YOUR_EMAIL@example.com'
+        EMAIL = 'sasanklingareddy@gmail.com'
     }
 
     stages {
